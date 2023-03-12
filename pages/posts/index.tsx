@@ -3,7 +3,7 @@ import Head from "next/head";
 
 export default function Post() {
   return (
-    <Layout>
+    <Layout home={false}>
       <Head>
         <title>Posts page</title>
       </Head>

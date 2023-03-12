@@ -1,19 +1,20 @@
+import Layout, { siteTitle } from "@/components/layout";
 import Head from "next/head";
-import Link from "next/link";
+import utilStyles from "../styles/utils.module.css";
 
 export default function Home() {
   return (
-    <>
+    <Layout home>
       <Head>
-        <title>Next.js Practice</title>
+        <title>{siteTitle}</title>
       </Head>
-      <div>
-        <div>This is Home page.</div>
-        <div>
-          If you need to check posts page, Go to{" "}
-          <Link href="/posts">posts page</Link>.
-        </div>
-      </div>
-    </>
+      <section className={utilStyles.headingMd}>
+        <p>Hi, I'm Tonny Stark known as a Iron Man.</p>
+        <p>
+          (This is a sample website - you’ll be building a site like this on{" "}
+          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+        </p>
+      </section>
+    </Layout>
   );
 }
