@@ -1,6 +1,7 @@
 import Layout, { siteTitle } from "@/components/layout";
 import { getSortedPostsData } from "@/lib/posts";
 import Head from "next/head";
+import Link from "next/link";
 import utilStyles from "../styles/utils.module.css";
 
 interface Props {
@@ -21,7 +22,7 @@ export default function Home({ allPostsData }: Props) {
         <p>Hi, I'm Tonny Stark known as a Iron Man.</p>
         <p>
           (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+          <Link href="https://nextjs.org/learn">our Next.js tutorial</Link>.)
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>

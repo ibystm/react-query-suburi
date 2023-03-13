@@ -37,3 +37,32 @@ export function getSortedPostsData() {
     }
   });
 }
+
+export function getAllPostds() {
+  const fileNames = fs.readdirSync(postsDirectory);
+  return fileNames.map((fileName) => {
+    return {
+      params: {
+        id: fileName.replace(/\.md$/, ""),
+      },
+    };
+  });
+}
+
+export function getPostData(id: string) {
+  const fullPath = path.join(postsDirectory, `${id}.md`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+
+  // 投稿のメタデータ部分を解析するために gray-matter を使う
+  const matterResult = matter(fileContents);
+
+  // データを id と組み合わせる
+  return {
+    id,
+    ...matterResult.data,
+  } as {
+    id: string;
+    title: string;
+    date: string;
+  };
+}
