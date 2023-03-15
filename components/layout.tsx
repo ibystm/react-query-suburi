@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 const name = "Tonny Stark";
 export const siteTitle = "Next.js Sample Website";
@@ -32,7 +33,7 @@ export default function Layout({ children, home }: Props) {
       <header className={styles.header}>
         {home ? (
           <>
-            <img
+            <Image
               src="/images/profile.jpeg"
               className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
               alt={name}
@@ -42,18 +43,14 @@ export default function Layout({ children, home }: Props) {
         ) : (
           <>
             <Link href="/">
-              <a>
-                <img
-                  src="/images/profile.jpg"
-                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
-                  alt={name}
-                />
-              </a>
+              <Image
+                src="/images/profile.jpeg"
+                className={`${styles.headerImage} ${utilStyles.borderCircle}`}
+                alt={name}
+              />
             </Link>
             <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
+              <Link href="/">{name}</Link>
             </h2>
           </>
         )}
@@ -61,9 +58,7 @@ export default function Layout({ children, home }: Props) {
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
+          <Link href="/">← Back to home</Link>
         </div>
       )}
     </div>
