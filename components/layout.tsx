@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 const name = "Tonny Stark";
 export const siteTitle = "Next.js Sample Website";
@@ -32,7 +33,7 @@ export default function Layout({ children, home }: Props) {
       <header className={styles.header}>
         {home ? (
           <>
-            <img
+            <Image
               src="/images/profile.jpeg"
               className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
               alt={name}
@@ -42,7 +43,7 @@ export default function Layout({ children, home }: Props) {
         ) : (
           <>
             <Link href="/">
-              <img
+              <Image
                 src="/images/profile.jpeg"
                 className={`${styles.headerImage} ${utilStyles.borderCircle}`}
                 alt={name}

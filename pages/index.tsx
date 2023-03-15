@@ -20,10 +20,10 @@ export default function Home({ allPostsData }: Props) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Hi, I'm Tonny Stark known as a Iron Man.</p>
+        <p>Hi, I&apos;m Tonny Stark known as a Iron Man.</p>
         <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <Link href="https://nextjs.org/learn">our Next.js tutorial</Link>.)
+          (This is a sample website - you&apos;ll be building a site like this
+          on <Link href="https://nextjs.org/learn">our Next.js tutorial</Link>.)
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
